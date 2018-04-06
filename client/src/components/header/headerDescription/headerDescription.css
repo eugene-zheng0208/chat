@@ -1,0 +1,15 @@
+.chat-header-description {
+    padding-left: 1em;
+}
+
+h2.userName {
+    font-size: .9em;
+    margin: 0;
+    padding: 0;
+}
+
+.lastSeen {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: .7em;
+}

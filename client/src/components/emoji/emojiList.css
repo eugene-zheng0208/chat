@@ -1,0 +1,59 @@
+
+.chat-emojis {
+    background-color: #eee;
+    color: #888;
+    overflow: hidden;
+    
+    padding: 0 1em;
+    transform: translateY(100%);
+    z-index: 0;
+    position: relative;
+
+    max-height: 0;
+
+    transition: transform .2s cubic-bezier(0.075, 0.82, 0.165, 1), max-height .1s cubic-bezier(0.075, 0.82, 0.165, 1);    
+}
+
+.chat-emojis.activated {
+    box-shadow: inset 0px -19px 8px -17px rgba(0,0,0,.2);
+
+    max-height: 173px;
+    overflow-y: auto;
+    padding: 1em;
+    transform: translateY(0);
+    transition: transform .2s cubic-bezier(0.075, 0.82, 0.165, 1), max-height .1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.chat-emojis h2 {
+    margin: 0;
+    margin-bottom: .5em;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+.emoji {
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 57px;
+    height: 57px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    text-shadow: 0 0 0 rgba(0,0,0,0);    
+    opacity: .9;
+
+    transition: opacity .6s cubic-bezier(0.075, 0.82, 0.165, 1), text-shadow .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */      
+}
+
+.emoji:hover {
+    opacity: 1;
+    text-shadow: 0 0 22px rgba(0,0,0,.8);
+    transition: opacity .6s cubic-bezier(0.075, 0.82, 0.165, 1), text-shadow .4s cubic-bezier(0.075, 0.82, 0.165, 1);    
+}

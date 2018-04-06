@@ -1,0 +1,113 @@
+
+.chat-messages {
+    background: url('../../assets/pattern.png') top left repeat;
+
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    display: inline-block;
+    min-width: 120px;
+    max-width: 450px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: .9em;
+
+    padding: .5em;
+    margin: 1em 1.5em;
+
+    background-color: white;
+    border-radius: 5px;
+
+    position: relative;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.message-in {
+    align-self: flex-start;
+    color: rgb(107, 107, 107);
+    transform-origin: left;
+}
+
+.message-in::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;    
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    
+    border-right:10px solid white; 
+}
+
+.message-out {
+    align-self: flex-end;
+    background-color: #e1bbdd;
+    color: #864d80;
+    transform-origin: right;
+    
+}
+
+.message-out::before {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 5px;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    
+    border-left:10px solid #e1bbdd; 
+}
+
+.message > .message-text {
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    display:inline-block;
+    padding-right: 5em;
+}
+
+.message > .message-timestamp {
+    font-size: .7em;
+    
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+/* message text animation */
+.chatIn-enter {
+  opacity: 0.01;
+  transform: scale(0);
+}
+
+.chatIn-enter.chatIn-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  
+  transition: opacity .4s ease-in, transform .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.chatIn-leave {
+  opacity: 1;
+  transform: scale(1);  
+}
+
+.chatIn-leave.chatIn-leave-active {
+  opacity: 0.01;
+  transform: scale(0);  
+  transition: opacity .2s ease-in, transform .1s;
+}
